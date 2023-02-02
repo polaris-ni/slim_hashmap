@@ -11,7 +11,7 @@ extern "C" {
 
 #include "slim_hashmap_types.h"
 
-SlimHashMap *hash_map_create();
+SlimHashMap *hash_map_create_default();
 
 int32_t hash_map_resize(SlimHashMap *hashMap, uint32_t newSize);
 

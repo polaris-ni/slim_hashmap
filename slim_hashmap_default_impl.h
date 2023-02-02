@@ -22,6 +22,16 @@ void *str_dup_func(const void *data);
 
 void str_free_func(void *data);
 
+void *int8_dup_func(const void *data);
+
+void *int16_dup_func(const void *data);
+
+void *int32_dup_func(const void *data);
+
+void *int64_dup_func(const void *data);
+
+void int_free_func(void *data);
+
 #ifdef _cplusplus
 }
 #endif

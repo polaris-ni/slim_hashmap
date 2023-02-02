@@ -55,3 +55,37 @@ void *str_dup_func(const void *data) {
 void str_free_func(void *data) {
     free(data);
 }
+
+void *int_dup_func(const void *data, uint32_t numOfBytes) {
+    if ((data == NULL) || (numOfBytes == 0)) {
+        return NULL;
+    }
+
+    void *new = malloc(numOfBytes);
+    if (new == NULL) {
+        return NULL;
+    }
+
+    memcpy(new, data, numOfBytes);
+    return new;
+}
+
+void *int8_dup_func(const void *data) {
+    return int_dup_func(data, sizeof(int8_t));
+}
+
+void *int16_dup_func(const void *data) {
+    return int_dup_func(data, sizeof(int16_t));
+}
+
+void *int32_dup_func(const void *data) {
+    return int_dup_func(data, sizeof(int32_t));
+}
+
+void *int64_dup_func(const void *data) {
+    return int_dup_func(data, sizeof(int64_t));
+}
+
+void int_free_func(void *data) {
+    free(data);
+}

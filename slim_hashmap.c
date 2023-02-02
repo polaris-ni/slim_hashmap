@@ -6,7 +6,7 @@
 
 #define MIN_HASHMAP_SIZE 16
 
-SlimHashMap *hash_map_create() {
+SlimHashMap *hash_map_create_default() {
     SlimHashMap *hashMap = (SlimHashMap *) malloc(sizeof(SlimHashMap));
     hashMap->dataSize = 0;
     hashMap->bucketSize = MIN_HASHMAP_SIZE;
