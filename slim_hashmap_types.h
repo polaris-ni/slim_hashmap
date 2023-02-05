@@ -30,25 +30,16 @@ typedef struct hash_map SlimHashMap;
 
 typedef uint32_t (*hash_func)(const SlimHashMap *map, const void *key);
 
-typedef bool(*is_equal_func)(const void *key1, const void *key2);
+typedef bool(*cmp_func)(const void *key1, const void *key2);
 
 typedef void *(*dup_func)(const void *ptr);
 
 typedef void (*free_func)(void *ptr);
 
-
-struct hash_map {
-    uint32_t dataSize;
-    uint32_t bucketSize;
-    hash_func hash;
-    is_equal_func isEqual;
-    Entry *list;
-    bool autoAssign;
-    dup_func keyDup;
-    free_func keyFree;
-    dup_func valueDup;
-    free_func valueFree;
-};
+typedef struct {
+    dup_func dup;
+    free_func free;
+} DupFreeFuncPair;
 
 #ifdef _cplusplus
 }

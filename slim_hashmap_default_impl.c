@@ -34,7 +34,7 @@ uint32_t java_string_hash_func(const SlimHashMap *hashMap, const void *key) {
     return hash % hashMap->bucketSize;
 }
 
-bool str_equal_func(const void *key1, const void *key2) {
+bool str_cmp_func(const void *key1, const void *key2) {
     return strcmp(key1, key2) == 0;
 }
 

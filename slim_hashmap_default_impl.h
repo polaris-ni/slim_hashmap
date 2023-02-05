@@ -16,7 +16,7 @@ uint32_t default_hash_func(const SlimHashMap *map, const void *key);
 
 uint32_t java_string_hash_func(const SlimHashMap *map, const void *key);
 
-bool str_equal_func(const void *key1, const void *key2);
+bool str_cmp_func(const void *key1, const void *key2);
 
 void *str_dup_func(const void *data);
 

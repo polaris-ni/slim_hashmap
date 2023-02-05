@@ -29,6 +29,18 @@ void hash_map_clear(SlimHashMap *hashMap);
 
 void hash_map_destroy(SlimHashMap **hashMap);
 
+uint32_t hash_map_size(const SlimHashMap *hashMap);
+
+void hash_map_set_hash_func(SlimHashMap *hashMap, const hash_func *hashFunc);
+
+void hash_map_set_key_cmp_func(SlimHashMap *hashMap, const cmp_func *cmpFunc);
+
+void hash_map_set_auto_assign(SlimHashMap *hashMap, bool autoAssign);
+
+void hash_map_set_key_func(SlimHashMap *hashMap, const DupFreeFuncPair *pair);
+
+void hash_map_set_value_func(SlimHashMap *hashMap, const DupFreeFuncPair *pair);
+
 #ifdef _cplusplus
 }
 #endif
